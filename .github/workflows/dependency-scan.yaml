@@ -18,11 +18,17 @@ jobs:
       - name: Run Veracode SCA
         env:
           SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
-        uses: veracode/veracode-sca@v2.1.10
+        # uses: veracode/veracode-sca@v2.1.10
+        uses: veracode/veracode-sca@issueGenerationWorflowApp
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # github_token: ${{ github.token }}
           create-issues: true 
+          # repo_owner:
+          #   description: "Repo Owner"
+          #   required: false
+          # repo_name:
+          #   description: "Repo Name"
+          #   required: false
 #           quick: true
 #           fail-on-cvss: 1
 #           min-cvss-for-issue: 1
